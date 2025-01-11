@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import { useNavigationContext } from "@/context/NavigationContext";
 import { AnimatePresence } from "motion/react";
+import BreatingLogo from "@/components/BreathingLogo";
 
 export default function Home() {
   const { exitSequence } = useNavigationContext();
@@ -35,33 +36,7 @@ export default function Home() {
           }
         >
           <AnimatePresence>
-            {!exitSequence && (
-              <motion.div
-                className={"absolute"}
-                exit={{
-                  top: "-15vh",
-                  opacity: 0,
-                  transition: { duration: 0.4, ease: "easeIn" },
-                }}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: [0, 1, 0],
-                  transition: {
-                    repeat: Infinity,
-                    duration: 3,
-                    delay: 2.5,
-                    ease: "easeInOut",
-                  },
-                }}
-              >
-                <Image
-                  src={"./icon.svg"}
-                  alt={"logo"}
-                  width={125}
-                  height={125}
-                />
-              </motion.div>
-            )}
+            {!exitSequence && <BreatingLogo delay={2.5} size={125} />}
           </AnimatePresence>
         </motion.div>
       </div>

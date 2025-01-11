@@ -28,7 +28,7 @@ export default function Navbar({
             className={`${containerClasses} ${containerChildClasses}`}
           >
             <motion.p
-              onClick={() => navigate("/about", 800)}
+              onClick={() => navigate("/about", 600)}
               initial={{ opacity: 0, marginBottom: -20 }}
               whileHover={{
                 marginTop: -10,

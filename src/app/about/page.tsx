@@ -68,7 +68,7 @@ export default function About() {
                     initial={{ top: -20, opacity: 0 }}
                     animate={{ top: 0, opacity: 1 }}
                     transition={{ delay: 0.5 }}
-                    className="relative text-[0.9rem] font-light"
+                    className="relative text-[0.9rem] font-light text-[rgba(255,255,255,0.8)]"
                   >
                     (and a student, too)
                   </motion.span>
@@ -77,7 +77,7 @@ export default function About() {
                   initial={{ top: -20, opacity: 0 }}
                   animate={{ top: 0, opacity: 1 }}
                   transition={{ delay: 0.35 }}
-                  className="opacity-80 leading-[1.9rem] mt-8"
+                  className="text-[rgba(255,255,255,0.8)] leading-[1.9rem] mt-8"
                 >
                   My expertise lies in creating interactive, accessible, and
                   engaging applications that align with user and business
@@ -89,7 +89,7 @@ export default function About() {
                   initial={{ top: -20, opacity: 0 }}
                   animate={{ top: 0, opacity: 1 }}
                   transition={{ delay: 0.35 }}
-                  className="opacity-80 leading-[1.9rem] mt-6"
+                  className="text-[rgba(255,255,255,0.8)] leading-[1.9rem] mt-6"
                 >
                   Currently, I’m in the final year of the Software Development
                   program at Southern Alberta Institute of Technology, where I’m

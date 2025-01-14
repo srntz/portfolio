@@ -99,7 +99,55 @@ export default function About() {
                 </motion.p>
               </div>
             </section>
-            <div className="h-[100vh]"></div>
+            <section id="why-am-i-in-software w-full">
+              <motion.h2
+                initial={{ top: -20, opacity: 0 }}
+                whileInView={{ top: 0, opacity: 1 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+                className="relative w-full text-[4.5rem] font-semibold font-nohemi mt-32 mb-12"
+              >
+                Why am I in software?
+              </motion.h2>
+              <div id="cards" className="w-full flex flex-col gap-[2rem]">
+                <div className="bg-[#181818] border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                  <h3 className="font-semibold font-nohemi text-[2.5rem]">
+                    Creativity
+                  </h3>
+                  <p className="leading-[1.8rem] opacity-80">
+                    I love music, art, and photography, and I can’t imagine my
+                    life without being creative and coming up with new ideas for
+                    solving problems. Software engineering gives me lots of
+                    opportunities to channel my creative thinking and see the
+                    results and impact of my work firsthand.
+                  </p>
+                </div>
+                <div className="flex gap-[2rem]">
+                  <div className="bg-[#181818] flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                    <h3 className="font-semibold font-nohemi text-[2.5rem]">
+                      Curiosity
+                    </h3>
+                    <p className="leading-[1.8rem] opacity-80">
+                      Technology is always evolving, and I love discovering new
+                      ways to solve problems and exploring tools that shape our
+                      lives. The opportunity to learn along the way makes it
+                      even more exciting for me.
+                    </p>
+                  </div>
+                  <div className="bg-[#181818] flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                    <h3 className="font-semibold font-nohemi text-[2.5rem]">
+                      Making difference
+                    </h3>
+                    <p className="leading-[1.8rem] opacity-80">
+                      I’m passionate about creating solutions that make lives
+                      easier, help businesses grow, and contribute to the
+                      coummunity. Building meaningful projects brings me a lot
+                      of joy.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </>
         )}
       </div>

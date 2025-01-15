@@ -4,6 +4,8 @@ import NavbarAlternate, { ILink } from "@/components/NavbarAlternate";
 import { useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import SectionTitle from "@/components/aboutPage/SectionTitle";
+import { stackLogoData } from "@/data/stackLogoData";
 
 const aboutPageNavbarLinks: ILink[] = [
   {
@@ -19,6 +21,8 @@ const aboutPageNavbarLinks: ILink[] = [
     href: "/",
   },
 ];
+
+const MotionNextImage = motion.create(Image);
 
 export default function About() {
   const [mainContentRendered, setMainContentRendered] = useState(false);
@@ -100,17 +104,15 @@ export default function About() {
               </div>
             </section>
             <section id="why-am-i-in-software w-full">
-              <motion.h2
-                initial={{ top: -20, opacity: 0 }}
-                whileInView={{ top: 0, opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-                className="relative w-full text-[4.5rem] font-semibold font-nohemi mt-32 mb-12"
-              >
-                Why am I in software?
-              </motion.h2>
+              <SectionTitle title={"Why am I in software?"} />
               <div id="cards" className="w-full flex flex-col gap-[2rem]">
-                <div className="bg-[#181818] border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                <motion.div
+                  initial={{ top: -20, opacity: 0 }}
+                  whileInView={{ top: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-[#181818] relative border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
+                >
                   <h3 className="font-semibold font-nohemi text-[2.5rem]">
                     Creativity
                   </h3>
@@ -121,9 +123,15 @@ export default function About() {
                     opportunities to channel my creative thinking and see the
                     results and impact of my work firsthand.
                   </p>
-                </div>
+                </motion.div>
                 <div className="flex gap-[2rem]">
-                  <div className="bg-[#181818] flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                  <motion.div
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 }}
+                    viewport={{ once: true }}
+                    className="bg-[#181818] relative flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
+                  >
                     <h3 className="font-semibold font-nohemi text-[2.5rem]">
                       Curiosity
                     </h3>
@@ -133,8 +141,14 @@ export default function About() {
                       lives. The opportunity to learn along the way makes it
                       even more exciting for me.
                     </p>
-                  </div>
-                  <div className="bg-[#181818] flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]">
+                  </motion.div>
+                  <motion.div
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="bg-[#181818] relative flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
+                  >
                     <h3 className="font-semibold font-nohemi text-[2.5rem]">
                       Making difference
                     </h3>
@@ -144,8 +158,30 @@ export default function About() {
                       coummunity. Building meaningful projects brings me a lot
                       of joy.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
+              </div>
+            </section>
+            <section>
+              <SectionTitle title={"My Stack"} />
+              <div
+                id="stack-icons-container"
+                className="w-full grid grid-rows-2 grid-cols-5 justify-between gap-x-28 gap-y-16"
+              >
+                {stackLogoData.map((item, index) => (
+                  <MotionNextImage
+                    key={index}
+                    src={item.src}
+                    alt={item.alt}
+                    width={115}
+                    height={115}
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.05 + 0.05 * index }}
+                    viewport={{ once: true }}
+                    className={"relative"}
+                  />
+                ))}
               </div>
             </section>
           </>

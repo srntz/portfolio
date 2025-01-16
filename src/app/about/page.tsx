@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import SectionTitle from "@/components/aboutPage/SectionTitle";
 import { stackLogoData } from "@/data/stackLogoData";
+import Link from "next/link";
 
 const aboutPageNavbarLinks: ILink[] = [
   {
@@ -184,6 +185,72 @@ export default function About() {
                 ))}
               </div>
             </section>
+            <section>
+              <SectionTitle title={"Apart from coding..."} />
+              <div className={"flex gap-16 items-center"}>
+                <MotionNextImage
+                  initial={{ top: -40, opacity: 0 }}
+                  whileInView={{ top: 0, opacity: 1 }}
+                  transition={{ delay: 0.15 }}
+                  viewport={{ once: true }}
+                  src={"/assets/cat-in-headphones.jpg"}
+                  width={350}
+                  height={350}
+                  alt={"An image of a cat wearing headphones"}
+                  className={"rounded-3xl relative"}
+                />
+                <div
+                  className={
+                    " leading-[1.9rem] [&_p]:opacity-80 [&_*]:relative"
+                  }
+                >
+                  <motion.p
+                    viewport={{ once: true }}
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 }}
+                  >
+                    I love music, production, audio engineering and everything
+                    related (you might&#39;ve guessed by looking at my
+                    projects). You can always find me listening to something. I
+                    also like to share songs and get nerdy about it.
+                  </motion.p>
+                  <motion.p
+                    viewport={{ once: true }}
+                    className={"mt-8"}
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    If you are still interested, you may find a playlist with a
+                    bunch of my favorite songs here.
+                  </motion.p>
+                  <motion.button
+                    viewport={{ once: true }}
+                    initial={{ top: -20, opacity: 0 }}
+                    whileInView={{ top: 0, opacity: 1 }}
+                    transition={{ delay: 0.25 }}
+                    className={"w-44 h-14 rounded-lg border-[1px] mt-8"}
+                  >
+                    Open the playlist
+                  </motion.button>
+                </div>
+              </div>
+            </section>
+            <div className={"h-36"}></div>
+            <motion.p
+              animate={{
+                marginLeft: [100, -100, 100],
+                transition: {
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                },
+              }}
+              className={"opacity-50 text-center font-light"}
+            >
+              hi! that's the very end of the page. it's nice here
+            </motion.p>
           </>
         )}
       </div>

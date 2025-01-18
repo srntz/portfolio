@@ -2,6 +2,8 @@
 import NavbarAlternate, { ILink } from "@/components/NavbarAlternate";
 import { useState } from "react";
 import { motion } from "motion/react";
+import ProjectSection from "@/components/projectsPage/ProjectSection";
+import { projectsData } from "@/data/projectsData";
 
 const aboutPageNavbarLinks: ILink[] = [
   {
@@ -31,14 +33,37 @@ export default function Projects() {
         />
       </header>
       {navbarRendered && (
-        <div id="main-content" className="px-40">
-          <motion.h1
-            initial={{ top: -15, opacity: 0 }}
-            animate={{ top: 0, opacity: 1 }}
-            className="relative text-[4.5rem] font-nohemi my-[2.3rem] font-bold"
-          >
-            My projects
-          </motion.h1>
+        <div className={"px-40"}>
+          <div id="main-content">
+            <motion.h1
+              initial={{ top: -15, opacity: 0 }}
+              animate={{ top: 0, opacity: 1 }}
+              className="relative text-[4.5rem] font-nohemi my-[2.3rem] font-bold"
+            >
+              My projects
+            </motion.h1>
+
+            <motion.h2
+              initial={{ top: -15, opacity: 0 }}
+              animate={{ top: 0, opacity: 1 }}
+              className="relative text-[1.7rem] font-nohemi my-[1.5rem] font-regular text-[rgba(255,255,255,0.85)]"
+            >
+              Completed
+            </motion.h2>
+
+            <section id="project-list" className="flex flex-col gap-12">
+              {projectsData
+                .filter((item) => item.completed)
+                .map((item) => (
+                  <ProjectSection
+                    key={item.id}
+                    title={item.title}
+                    description={item.description}
+                    imageUrl={item.imageUrl}
+                  />
+                ))}
+            </section>
+          </div>
         </div>
       )}
     </div>

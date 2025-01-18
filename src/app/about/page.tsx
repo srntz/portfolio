@@ -7,6 +7,7 @@ import Image from "next/image";
 import SectionTitle from "@/components/aboutPage/SectionTitle";
 import { stackLogoData } from "@/data/stackLogoData";
 import { useNavigationContext } from "@/context/NavigationContext";
+import { MotionNextImage } from "@/components/utils/MotionNextImage";
 
 const aboutPageNavbarLinks: ILink[] = [
   {
@@ -22,8 +23,6 @@ const aboutPageNavbarLinks: ILink[] = [
     href: "/",
   },
 ];
-
-const MotionNextImage = motion.create(Image);
 
 export default function About() {
   const [navbarRendered, setNavbarRendered] = useState(false);

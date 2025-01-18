@@ -1,18 +1,27 @@
 import { MotionNextImage } from "@/components/utils/MotionNextImage";
+import { motion } from "motion/react";
 
-export default function ProjectSection({
+export function ProjectSection({
   title,
   description,
   imageUrl,
+  delayMultiplier = 0,
 }: {
   title: string;
   description: string;
   imageUrl: string;
+  delayMultiplier?: number;
 }) {
   return (
-    <div className="w-full hover:backdrop-brightness-[1.75] rounded-3xl flex gap-10 pr-12 cursor-pointer">
+    <motion.div
+      initial={{ top: -20, opacity: 0 }}
+      whileInView={{ top: 0, opacity: 1 }}
+      transition={{ delay: 0.15 + 0.1 * delayMultiplier }}
+      viewport={{ once: true }}
+      className="w-full relative transition-[backdrop] hover:backdrop-brightness-[1.75] rounded-3xl flex gap-10 pr-12 cursor-pointer"
+    >
       <MotionNextImage
-        className={`w-96 h-52 bg-gray-400 rounded-3xl`}
+        className={`w-96 h-52 rounded-3xl`}
         alt={`${title} image`}
         src={imageUrl}
         width={384}
@@ -23,6 +32,6 @@ export default function ProjectSection({
         <h2 className="font-nohemi font-bold text-[3rem]">{title}</h2>
         <p className={"opacity-80 leading-[1.7rem]"}>{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

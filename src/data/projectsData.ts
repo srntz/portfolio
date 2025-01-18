@@ -23,4 +23,19 @@ export const projectsData: IProjectData[] = [
     imageUrl: "https://i.imgur.com/gZDkSXI.png",
     completed: true,
   },
+  {
+    id: 3,
+    title: "Uvaro Assess",
+    description:
+      "A Career success assessment tool being built in collaboration with and for a EdTech company, Uvaro.",
+    imageUrl: "https://i.imgur.com/54i1DbU.png",
+    completed: false,
+  },
+  {
+    id: 4,
+    title: "Cenaturi",
+    description: "A web-based multi-oscillator polyphonic synthesizer.",
+    imageUrl: "https://i.imgur.com/rcovMlU.png",
+    completed: false,
+  },
 ];

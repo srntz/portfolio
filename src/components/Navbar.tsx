@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useNavigationContext } from "@/context/NavigationContext";
 
 const containerClasses =
-  "absolute h-16 w-full flex justify-center text-[1rem] font-medium items-center gap-[15rem] bottom-[3.5rem]";
+  "absolute h-16 w-full flex justify-center text-[1rem] font-light items-center gap-[15rem] pr-[1.15rem] bottom-[3.5rem]";
 const containerChildClasses =
   "[&>p]:cursor-pointer [&>p]:h-full [&>p]:flex [&>p]:items-center";
 
@@ -25,7 +25,7 @@ export default function Navbar({
           <motion.div
             id="navbar"
             exit={{ marginTop: 20, opacity: 0 }}
-            className={`${containerClasses} ${containerChildClasses}`}
+            className={`${containerClasses} ${containerChildClasses} font-nohemi`}
           >
             <motion.p
               onClick={() => navigate("/about", 600)}
@@ -43,6 +43,7 @@ export default function Navbar({
               About me
             </motion.p>
             <motion.p
+              onClick={() => navigate("/projects", 600)}
               initial={{ opacity: 0, marginBottom: -20 }}
               whileHover={{
                 marginTop: -10,
@@ -57,6 +58,7 @@ export default function Navbar({
               Projects
             </motion.p>
             <motion.p
+              onClick={() => navigate("/contact", 600)}
               initial={{ opacity: 0, marginBottom: -20 }}
               whileHover={{
                 marginTop: -10,

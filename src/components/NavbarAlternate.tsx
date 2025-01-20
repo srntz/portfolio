@@ -14,13 +14,13 @@ export interface ILink {
 }
 
 export default function NavbarAlternate({
-  links,
   callback,
-  styleChangeScrollPosition,
+  styleChangeScrollPosition = 115,
+  pathname,
 }: {
-  links: ILink[];
   callback?: () => void;
-  styleChangeScrollPosition: number;
+  styleChangeScrollPosition?: number;
+  pathname: string;
 }) {
   const [containerAnimationCompleted, setContainerAnimationCompleted] =
     useState(false);
@@ -66,7 +66,7 @@ export default function NavbarAlternate({
       }}
       animate={{
         opacity: 1,
-        width: "45rem",
+        width: "52rem",
         top: 0,
       }}
       onAnimationComplete={() => {
@@ -84,19 +84,42 @@ export default function NavbarAlternate({
     >
       <BreatingLogo delay={0.5} size={35} />
       {containerAnimationCompleted && (
-        <ul className="flex flex-1 justify-between ml-9 px-24">
-          {links.map((item, index) => (
-            <motion.li
-              initial={{ top: -20, opacity: 0 }}
-              animate={{ top: "auto", opacity: 1 }}
-              transition={{ delay: 0.1 * index }}
-              className="relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center cursor-pointer"
-              key={index}
-              onClick={() => navigate(item.href, 500)}
-            >
-              {item.title}
-            </motion.li>
-          ))}
+        <ul className="flex flex-1 justify-between ml-10 px-24">
+          <motion.li
+            initial={{ top: -20, opacity: 0 }}
+            animate={{ top: "auto", opacity: 1 }}
+            className="relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center cursor-pointer"
+            onClick={() => navigate("/", 400)}
+          >
+            Home
+          </motion.li>
+          <motion.li
+            initial={{ top: -20, opacity: 0 }}
+            animate={{ top: "auto", opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/about" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            onClick={() => navigate("/about", 400)}
+          >
+            About
+          </motion.li>
+          <motion.li
+            initial={{ top: -20, opacity: 0 }}
+            animate={{ top: "auto", opacity: 1 }}
+            transition={{ delay: 0.1 * 2 }}
+            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/projects" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            onClick={() => navigate("/projects", 400)}
+          >
+            Projects
+          </motion.li>
+          <motion.li
+            initial={{ top: -20, opacity: 0 }}
+            animate={{ top: "auto", opacity: 1 }}
+            transition={{ delay: 0.1 * 3 }}
+            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/contact" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            onClick={() => navigate("/contact", 400)}
+          >
+            Contact
+          </motion.li>
         </ul>
       )}
     </motion.nav>

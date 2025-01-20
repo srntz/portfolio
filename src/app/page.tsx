@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "motion/react";
 import Navbar from "@/components/Navbar";
 import { useNavigationContext } from "@/context/NavigationContext";
@@ -20,7 +19,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.75, delay: 0.5 } }}
-            className={"text-[#141414] font-medium text-[1.2rem]"}
+            className={"text-[#141414] font-medium font-nohemi text-[1.2rem]"}
           >
             Denis Pechenkin @ 2025
           </motion.p>

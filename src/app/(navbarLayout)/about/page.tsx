@@ -205,15 +205,22 @@ export default function About() {
                 If you are still interested, you may find a playlist with a
                 bunch of my favorite songs here.
               </motion.p>
-              <motion.button
-                viewport={{ once: true }}
-                initial={{ top: -20, opacity: 0 }}
-                whileInView={{ top: 0, opacity: 1 }}
-                transition={{ delay: 0.25 }}
-                className={"w-44 h-14 rounded-lg border-[1px] mt-8"}
+              <a
+                href={
+                  "https://open.spotify.com/playlist/7t6nRBzJYqR5m393FtFUos?si=1e6b6c22d575463a"
+                }
+                target={"_blank"}
               >
-                Open the playlist
-              </motion.button>
+                <motion.button
+                  viewport={{ once: true }}
+                  initial={{ top: -20, opacity: 0 }}
+                  whileInView={{ top: 0, opacity: 1 }}
+                  transition={{ delay: 0.25 }}
+                  className={"w-44 h-14 rounded-lg border-[1px] mt-8"}
+                >
+                  Open the playlist
+                </motion.button>
+              </a>
             </div>
           </div>
         </section>

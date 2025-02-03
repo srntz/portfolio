@@ -56,6 +56,15 @@ export default function NavbarAlternate({
     }
   });
 
+  function animateExit(path: string, timeout: number) {
+    animate(
+      scope.current,
+      { top: "-2rem", opacity: 0 },
+      { duration: 0.2, ease: "easeInOut" },
+    );
+    navigate(path, timeout);
+  }
+
   return (
     <motion.nav
       ref={scope}
@@ -89,7 +98,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             className="relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center cursor-pointer"
-            onClick={() => navigate("/", 400)}
+            onClick={() => animateExit("/", 250)}
           >
             Home
           </motion.li>

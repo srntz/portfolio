@@ -7,7 +7,7 @@ export default function SectionTitle({ title }: { title: string }) {
       whileInView={{ top: 0, opacity: 1 }}
       transition={{ delay: 0.1 }}
       viewport={{ once: true }}
-      className="relative w-full text-[4.5rem] font-semibold font-nohemi mt-32 mb-12"
+      className="relative w-full text-[2.5rem] md:text-[3rem] lg:text-[4.5rem] font-semibold font-nohemi mt-10 mb-6 lg:mt-32 lg:mb-12"
     >
       {title}
     </motion.h2>

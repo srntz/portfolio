@@ -4,13 +4,15 @@ import Image from "next/image";
 export default function BreatingLogo({
   delay,
   size,
+  className,
 }: {
   delay: number;
   size: number;
+  className?: string;
 }) {
   return (
     <motion.div
-      className={"absolute"}
+      className={`absolute ${className}`}
       exit={{
         top: "-15vh",
         opacity: 0,

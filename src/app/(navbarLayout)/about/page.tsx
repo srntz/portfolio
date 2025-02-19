@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useAnimate } from "motion/react";
+import { motion, useAnimate } from "motion/react";
 import Image from "next/image";
 import SectionTitle from "@/components/aboutPage/SectionTitle";
 import { stackLogoData } from "@/data/stackLogoData";
@@ -20,15 +20,18 @@ export default function About() {
 
   return (
     <div id="about" ref={scope} className="relative">
-      <motion.div id="main-content" className="px-40">
+      <motion.div
+        id="main-content"
+        className="px-8 sm:px-12 md:px-16 lg:px-30 xl:px-35 2xl:px-40"
+      >
         <motion.h1
           initial={{ top: -15, opacity: 0 }}
           animate={{ top: 0, opacity: 1 }}
-          className="relative text-[5.9rem] font-nohemi my-[4rem] font-bold"
+          className="relative text-[3rem] md:text-[4rem] lg:text-[5.9rem] font-nohemi my-[2rem] md:my-[2.3rem] lg:my-[4rem] font-bold"
         >
           Hi, I'm Denis.
         </motion.h1>
-        <section className="w-full flex gap-16">
+        <section className="w-full flex flex-col lg:flex-row gap-3 lg:gap-16">
           <motion.div
             className="relative"
             initial={{ top: -20, opacity: 0 }}
@@ -36,19 +39,19 @@ export default function About() {
             transition={{ delay: 0.2 }}
           >
             <Image
-              width={500}
+              width={600}
               height={1200}
               src={"/assets/myPhoto.jpg"}
               alt={"personal photo"}
-              className="rounded-3xl"
+              className="rounded-3xl lg:w-[27rem] xl:w-auto"
             ></Image>
           </motion.div>
-          <div id="summary-container" className="flex-1 py-10">
+          <div id="summary-container" className="flex-1 py-5 lg:py-10">
             <motion.h2
               initial={{ top: -20, opacity: 0 }}
               animate={{ top: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="relative text-[3rem] font-semibold font-nohemi leading-tight"
+              className="relative text-[2.5rem] lg:text-[3rem] font-semibold font-nohemi leading-[1.1] md:leading-[1.25]"
             >
               I'm a passionate full-stack engineer.{" "}
               <motion.span
@@ -64,7 +67,7 @@ export default function About() {
               initial={{ top: -20, opacity: 0 }}
               animate={{ top: 0, opacity: 1 }}
               transition={{ delay: 0.35 }}
-              className="text-[rgba(255,255,255,0.8)] leading-[1.9rem] mt-8"
+              className="text-[rgba(255,255,255,0.8)] text-[0.9rem] sm:text-[1rem] leading-[1.7rem] sm:leading-[1.9rem] mt-4 xl:mt-8"
             >
               My expertise lies in creating interactive, accessible, and
               engaging applications that align with user and business
@@ -76,7 +79,7 @@ export default function About() {
               initial={{ top: -20, opacity: 0 }}
               animate={{ top: 0, opacity: 1 }}
               transition={{ delay: 0.35 }}
-              className="text-[rgba(255,255,255,0.8)] leading-[1.9rem] mt-6"
+              className="text-[rgba(255,255,255,0.8)] text-[0.9rem] sm:text-[1rem] leading-[1.7rem] sm:leading-[1.9rem] mt-4 xl:mt-6"
             >
               Currently, I’m in the final year of the Software Development
               program at Southern Alberta Institute of Technology, where I’m
@@ -96,7 +99,7 @@ export default function About() {
               viewport={{ once: true }}
               className="bg-[#181818] relative border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
             >
-              <h3 className="font-semibold font-nohemi text-[2.5rem]">
+              <h3 className="font-semibold font-nohemi text-[2rem] md:text-[2.5rem]">
                 Creativity
               </h3>
               <p className="leading-[1.8rem] opacity-80">
@@ -107,7 +110,7 @@ export default function About() {
                 my work firsthand.
               </p>
             </motion.div>
-            <div className="flex gap-[2rem]">
+            <div className="flex flex-col md:flex-row gap-[2rem]">
               <motion.div
                 initial={{ top: -20, opacity: 0 }}
                 whileInView={{ top: 0, opacity: 1 }}
@@ -115,7 +118,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="bg-[#181818] relative flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
               >
-                <h3 className="font-semibold font-nohemi text-[2.5rem]">
+                <h3 className="font-semibold font-nohemi text-[2rem] md:text-[2.5rem]">
                   Curiosity
                 </h3>
                 <p className="leading-[1.8rem] opacity-80">
@@ -132,7 +135,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="bg-[#181818] relative flex-1 border-[1px] rounded-3xl py-[2.5rem] px-[2rem]"
               >
-                <h3 className="font-semibold font-nohemi text-[2.5rem]">
+                <h3 className="font-semibold font-nohemi text-[2rem] md:text-[2.5rem]]">
                   Making difference
                 </h3>
                 <p className="leading-[1.8rem] opacity-80">
@@ -149,27 +152,27 @@ export default function About() {
           <SectionTitle title={"My Stack"} />
           <div
             id="stack-icons-container"
-            className="w-full grid grid-rows-2 grid-cols-5 justify-between gap-x-28 gap-y-16"
+            className="w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-y-8 gap-x-12 sm:gap-x-16 lg:gap-x-24 xl:gap-x-28 lg:gap-y-16"
           >
             {stackLogoData.map((item, index) => (
               <MotionNextImage
                 key={index}
                 src={item.src}
                 alt={item.alt}
-                width={115}
-                height={115}
+                width={120}
+                height={120}
                 initial={{ top: -20, opacity: 0 }}
                 whileInView={{ top: 0, opacity: 1 }}
                 transition={{ delay: 0.05 + 0.05 * index }}
                 viewport={{ once: true }}
-                className={"relative"}
+                className={"relative w-auto max-w-24 lg:max-w-32"}
               />
             ))}
           </div>
         </section>
         <section>
           <SectionTitle title={"Besides coding..."} />
-          <div className={"flex gap-16 items-center"}>
+          <div className={"flex flex-col gap-6 lg:flex-row lg:gap-16"}>
             <MotionNextImage
               initial={{ top: -40, opacity: 0 }}
               whileInView={{ top: 0, opacity: 1 }}
@@ -182,7 +185,9 @@ export default function About() {
               className={"rounded-3xl relative"}
             />
             <div
-              className={" leading-[1.9rem] [&_p]:opacity-80 [&_*]:relative"}
+              className={
+                "text-[rgba(255,255,255,0.8)] text-[0.9rem] leading-[1.7rem] md:text-[1rem] md:leading-[1.9rem] [&_p]:opacity-80 [&_*]:relative"
+              }
             >
               <motion.p
                 viewport={{ once: true }}
@@ -197,7 +202,7 @@ export default function About() {
               </motion.p>
               <motion.p
                 viewport={{ once: true }}
-                className={"mt-8"}
+                className={"mt-4 lg:mt-8"}
                 initial={{ top: -20, opacity: 0 }}
                 whileInView={{ top: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -216,7 +221,9 @@ export default function About() {
                   initial={{ top: -20, opacity: 0 }}
                   whileInView={{ top: 0, opacity: 1 }}
                   transition={{ delay: 0.25 }}
-                  className={"w-44 h-14 rounded-lg border-[1px] mt-8"}
+                  className={
+                    "w-44 h-14 rounded-lg border-[1px] mt-8 hover:bg-green-900 transition duration-200"
+                  }
                 >
                   Open the playlist
                 </motion.button>
@@ -224,7 +231,7 @@ export default function About() {
             </div>
           </div>
         </section>
-        <div className={"h-36"}></div>
+        <div className={"h-12 md:h-36"}></div>
         <motion.p
           animate={{
             marginLeft: [100, -100, 100],
@@ -234,7 +241,7 @@ export default function About() {
               ease: "easeInOut",
             },
           }}
-          className={"opacity-50 text-center font-light"}
+          className={"opacity-50 text-center font-light hidden md:block"}
         >
           hi! this is the very bottom of the page. it's nice here
         </motion.p>

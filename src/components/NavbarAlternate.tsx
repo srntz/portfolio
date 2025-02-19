@@ -89,15 +89,15 @@ export default function NavbarAlternate({
         width: { delay: 0.5, duration: 0.2, ease: "easeInOut" },
       }}
       style={{ backdropFilter: "brightness(0.5) blur(10px)" }}
-      className="relative bg-[#1D1D1D] flex items-center px-6 h-[4.5rem] rounded-3xl"
+      className="relative bg-[#1D1D1D] flex items-center px-6 h-[4rem] md:h-[4.5rem] mx-5 md:mx-none rounded-3xl"
     >
-      <BreatingLogo delay={0.5} size={35} />
+      <BreatingLogo delay={0.5} size={35} className={"hidden md:block"} />
       {containerAnimationCompleted && (
-        <ul className="flex flex-1 justify-between ml-10 px-24">
+        <ul className="flex flex-1 justify-between md:ml-10 px-6 sm:px-20 lg:px-24">
           <motion.li
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
-            className="relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center cursor-pointer"
+            className="relative hidden md:flex text-[#D7D7D7] font-nohemi mt-px h-8 justify-center items-center cursor-pointer"
             onClick={() => animateExit("/", 250)}
           >
             Home
@@ -106,7 +106,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/about" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/about" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/about", 400)}
           >
             About
@@ -115,7 +115,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 * 2 }}
-            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/projects" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/projects" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/projects", 400)}
           >
             Projects
@@ -124,7 +124,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 * 3 }}
-            className={`relative text-[#D7D7D7] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/contact" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/contact" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/contact", 400)}
           >
             Contact

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useNavigationContext } from "@/context/NavigationContext";
 
 const containerClasses =
-  "absolute h-16 w-full flex justify-center text-[1rem] font-light items-center gap-[15rem] pr-[1.15rem] bottom-[3.5rem]";
+  "absolute md:h-16 w-full flex flex-col md:flex-row justify-center text-[1rem] font-light items-center gap-[2rem] md:gap-[9rem] lg:gap-[15rem] pr-[0.35rem] md:pr-[1.15rem] bottom-[4rem] md:bottom-[3.5rem]";
 const containerChildClasses =
   "[&>p]:cursor-pointer [&>p]:h-full [&>p]:flex [&>p]:items-center";
 

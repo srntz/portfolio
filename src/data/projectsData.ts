@@ -3,6 +3,8 @@ interface IProjectData {
   title: string;
   description: string;
   imageUrl: string;
+  githubUrl?: string;
+  npmUrl?: string;
   completed: boolean;
 }
 
@@ -13,6 +15,8 @@ export const projectsData: IProjectData[] = [
     description:
       "A dependency-free MIDI device emulator package. It provides functionality for using a computer keyboard as a MIDI input device. Compatible with TypeScript and JavaScript.",
     imageUrl: "https://i.imgur.com/lRl3Kgr.png",
+    githubUrl: "https://github.com/srntz/keyboard-midi-controller",
+    npmUrl: "https://www.npmjs.com/package/keyboard-midi-controller",
     completed: true,
   },
   {

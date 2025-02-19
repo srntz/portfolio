@@ -36,7 +36,7 @@ export default function Projects() {
             Completed
           </motion.h2>
 
-          <section id="project-list" className="flex flex-col gap-12">
+          <section id="project-list" className="flex gap-10">
             {projectsData
               .filter((item) => item.completed)
               .map((item, index) => (
@@ -45,6 +45,8 @@ export default function Projects() {
                   title={item.title}
                   description={item.description}
                   imageUrl={item.imageUrl}
+                  githubUrl={item.githubUrl}
+                  npmUrl={item.npmUrl}
                   delayMultiplier={index}
                 />
               ))}
@@ -59,7 +61,7 @@ export default function Projects() {
             In progress
           </motion.h2>
 
-          <section id="project-list" className="flex flex-col gap-12">
+          <section id="project-list" className="flex gap-10">
             {projectsData
               .filter((item) => !item.completed)
               .map((item) => (

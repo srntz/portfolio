@@ -4,6 +4,10 @@ export const stackLogoData = [
     alt: "Typescript logo",
   },
   {
+    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
+    alt: "Golang logo",
+  },
+  {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
     alt: "Node.js logo",
   },
@@ -34,9 +38,5 @@ export const stackLogoData = [
   {
     src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     alt: "Java logo",
-  },
-  {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-    alt: "Figma logo",
   },
 ];

@@ -2,6 +2,7 @@ import { MotionNextImage } from "@/components/utils/MotionNextImage";
 import { motion } from "motion/react";
 import github from "@/../public/assets/github.svg";
 import pkg from "@/../public/assets/package.svg";
+import globe from "@/../public/assets/globe.svg";
 
 export function ProjectSection({
   title,
@@ -10,6 +11,7 @@ export function ProjectSection({
   delayMultiplier = 0,
   githubUrl,
   npmUrl,
+  liveUrl,
 }: {
   title: string;
   description: string;
@@ -17,6 +19,7 @@ export function ProjectSection({
   delayMultiplier?: number;
   githubUrl?: string;
   npmUrl?: string;
+  liveUrl?: string;
 }) {
   return (
     <motion.div
@@ -43,8 +46,8 @@ export function ProjectSection({
           >
             <MotionNextImage
               src={github}
-              width={35}
-              height={35}
+              width={32}
+              height={32}
               alt={"link logo"}
             />
             <p className="text-sm">Github</p>
@@ -57,11 +60,25 @@ export function ProjectSection({
           >
             <MotionNextImage
               src={pkg}
-              width={35}
-              height={35}
+              width={32}
+              height={32}
               alt={"link logo"}
             />
             <p className="text-sm">npm</p>
+          </div>
+        )}
+        {liveUrl && (
+          <div
+            className="flex items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
+            onClick={() => window.open(liveUrl, "_blank")}
+          >
+            <MotionNextImage
+              src={globe}
+              width={32}
+              height={32}
+              alt={"link logo"}
+            />
+            <p className="text-sm">Live</p>
           </div>
         )}
       </div>

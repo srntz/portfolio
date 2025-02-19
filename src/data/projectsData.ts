@@ -5,6 +5,7 @@ interface IProjectData {
   imageUrl: string;
   githubUrl?: string;
   npmUrl?: string;
+  liveUrl?: string;
   completed: boolean;
 }
 
@@ -25,6 +26,8 @@ export const projectsData: IProjectData[] = [
     description:
       "A full-stack music album generator with a multi-layer random algorithm. It is based on the Spotify library and utilizes the Spotify Web API as its data source.",
     imageUrl: "https://i.imgur.com/gZDkSXI.png",
+    githubUrl: "https://github.com/srntz/coda",
+    liveUrl: "https://coda-generate.vercel.app/",
     completed: true,
   },
   {
@@ -40,6 +43,7 @@ export const projectsData: IProjectData[] = [
     title: "Cenaturi",
     description: "A web-based multi-oscillator polyphonic synthesizer.",
     imageUrl: "https://i.imgur.com/rcovMlU.png",
+    githubUrl: "https://github.com/srntz/w-synth",
     completed: false,
   },
 ];

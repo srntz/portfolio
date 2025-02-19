@@ -168,7 +168,7 @@ export default function About() {
           </div>
         </section>
         <section>
-          <SectionTitle title={"Apart from coding..."} />
+          <SectionTitle title={"Besides coding..."} />
           <div className={"flex gap-16 items-center"}>
             <MotionNextImage
               initial={{ top: -40, opacity: 0 }}
@@ -236,7 +236,7 @@ export default function About() {
           }}
           className={"opacity-50 text-center font-light"}
         >
-          hi! that's the very end of the page. it's nice here
+          hi! this is the very bottom of the page. it's nice here
         </motion.p>
       </motion.div>
     </div>

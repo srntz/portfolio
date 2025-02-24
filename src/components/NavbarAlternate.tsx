@@ -106,7 +106,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/about" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center ${pathname === "/about" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/about", 400)}
           >
             About
@@ -115,7 +115,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 * 2 }}
-            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/projects" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center ${pathname === "/projects" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/projects", 400)}
           >
             Projects
@@ -124,7 +124,7 @@ export default function NavbarAlternate({
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: "auto", opacity: 1 }}
             transition={{ delay: 0.1 * 3 }}
-            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center transition-opacity ${pathname === "/contact" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
+            className={`relative text-[#D7D7D7] text-[0.9rem] sm:text-[1rem] font-nohemi mt-px h-8 flex justify-center items-center ${pathname === "/contact" ? `text-opacity-30 cursor-default pointer-events-none` : `cursor-pointer`}`}
             onClick={() => navigate("/contact", 400)}
           >
             Contact

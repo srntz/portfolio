@@ -7,6 +7,10 @@ import { stackLogoData } from "@/data/stackLogoData";
 import { useNavigationContext } from "@/context/NavigationContext";
 import { MotionNextImage } from "@/components/utils/MotionNextImage";
 import { useEffect } from "react";
+import {
+  PrimaryHeadingType,
+  PrimaryHeading,
+} from "@/components/headings/PrimaryHeading";
 
 export default function About() {
   const { exitSequence } = useNavigationContext();
@@ -24,13 +28,10 @@ export default function About() {
         id="main-content"
         className="px-8 sm:px-12 md:px-16 lg:px-30 xl:px-35 2xl:px-40"
       >
-        <motion.h1
-          initial={{ top: -15, opacity: 0 }}
-          animate={{ top: 0, opacity: 1 }}
-          className="relative text-[3rem] md:text-[4rem] lg:text-[5.9rem] font-nohemi my-[2rem] md:my-[2.3rem] lg:my-[4rem] font-bold"
-        >
-          Hi, I'm Denis.
-        </motion.h1>
+        <PrimaryHeading
+          title={"Hi, I'm Denis"}
+          type={PrimaryHeadingType.EMPHASIZED}
+        />
         <section className="w-full flex flex-col lg:flex-row gap-3 lg:gap-16">
           <motion.div
             className="relative"

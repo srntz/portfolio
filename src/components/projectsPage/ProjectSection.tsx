@@ -24,13 +24,13 @@ export function ProjectSection({
   return (
     <motion.div
       initial={{ top: -20, opacity: 0 }}
-      whileInView={{ top: 0, opacity: 1 }}
+      animate={{ top: 0, opacity: 1 }}
       transition={{ delay: 0.15 + 0.1 * delayMultiplier }}
       viewport={{ once: true }}
-      className="w-full relative transition-[backdrop] rounded-3xl flex flex-col gap-4 cursor-pointer"
+      className="w-full relative transition-[backdrop] rounded-3xl flex flex-col gap-4 cursor-default"
     >
       <MotionNextImage
-        className={`w-full h-[16rem] rounded-3xl object-cover`}
+        className={`w-full h-[11rem] sm:h-[16rem] md:h-[20rem] lg:h-[16rem] rounded-3xl object-cover`}
         alt={`${title} image`}
         src={imageUrl}
         width={384}
@@ -38,54 +38,63 @@ export function ProjectSection({
         unoptimized={true}
       />
 
-      <div className="links flex pl-1 py-1 gap-10">
+      <div className="links flex pl-1 sm:py-1 gap-6 sm:gap-10">
         {githubUrl && (
           <div
-            className="flex items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
+            className="flex cursor-pointer items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
             onClick={() => window.open(githubUrl, "_blank")}
           >
             <MotionNextImage
               src={github}
               width={32}
               height={32}
-              alt={"link logo"}
+              alt={"github logo"}
+              className={"w-[2rem] sm:w-[2.4rem]"}
             />
-            <p className="text-sm">Github</p>
+            <p className="text-[0.75rem] sm:text-sm">Github</p>
           </div>
         )}
         {npmUrl && (
           <div
-            className="flex items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
+            className="flex cursor-pointer items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
             onClick={() => window.open(npmUrl, "_blank")}
           >
             <MotionNextImage
               src={pkg}
               width={32}
               height={32}
-              alt={"link logo"}
+              alt={"npm logo"}
+              className={"w-[2rem] sm:w-[2.4rem]"}
             />
-            <p className="text-sm">npm</p>
+            <p className="text-[0.75rem] sm:text-sm">npm</p>
           </div>
         )}
         {liveUrl && (
           <div
-            className="flex items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
+            className="flex cursor-pointer items-center gap-3 brightness-[0.7] hover:brightness-100 transition rounded"
             onClick={() => window.open(liveUrl, "_blank")}
           >
             <MotionNextImage
               src={globe}
               width={32}
               height={32}
-              alt={"link logo"}
+              alt={"live logo"}
+              className={"w-[2rem] sm:w-[2.4rem]"}
             />
-            <p className="text-sm">Live</p>
+            <p className="text-[0.75rem] sm:text-sm">Live</p>
           </div>
         )}
       </div>
 
       <div className="flex-1 flex flex-col -mt-1">
-        <h2 className="font-nohemi font-bold text-[2.7rem]">{title}</h2>
-        <p className={"opacity-80 leading-[1.7rem]"}>{description}</p>
+        <h2 className="font-nohemi font-bold text-[2.2rem] sm:text-[2.7rem]">
+          {title}
+        </h2>
+        <p
+          className={"opacity-80 leading-[1.7rem] text-[0.9rem] sm:text-[1rem]"}
+        >
+          {description}
+        </p>
       </div>
     </motion.div>
   );

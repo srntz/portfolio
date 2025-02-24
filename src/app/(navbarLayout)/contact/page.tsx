@@ -42,7 +42,7 @@ export default function Contact() {
         </motion.p>
         <div
           id="card-links"
-          className="w-full flex gap-14 mt-[4.5rem] [&_*]:cursor-pointer [&_*]:brightness-[0.75] hover:[&_*]:brightness-[1] [&_*]:transition"
+          className="w-full flex gap-14 mt-[4.5rem] [&_*]:cursor-pointer [&_*]:brightness-[0.75] hover:[&_*]:brightness-[1] [&_*]:transition-[filter]"
         >
           <MotionNextImage
             src={github}
@@ -52,7 +52,6 @@ export default function Contact() {
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            viewport={{ once: true }}
             className={"relative -mt-[0.1rem] w-10"}
             onClick={() => openLink("https://github.com/srntz")}
           />
@@ -64,7 +63,6 @@ export default function Contact() {
             initial={{ top: -20, opacity: 0 }}
             animate={{ top: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
             className={"relative -mt-[0.1rem] w-10"}
             onClick={() =>
               openLink("https://www.linkedin.com/in/denis-pechenkin/")
